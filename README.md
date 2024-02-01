@@ -18,7 +18,7 @@
 
 ```
 Listening on 0.0.0.0 (all interfaces) port 5000
-python3.8 c2-working.py 
+python3.8 c2-server.py 
 ```
 
 
