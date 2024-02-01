@@ -5,7 +5,7 @@ Agents written in C, server in Python3.8
 To get the server up and listening:
 
 # Listening on 0.0.0.0 (all interfaces) port 5000
-python3.8 c2-server.py
+python3.8 c2-working.py 
 
 
 
