@@ -4,6 +4,7 @@ from collections import OrderedDict
 # ANSI escape sequences for colors
 GREEN = '\033[1;38;5;2m'
 ORANGE = '\033[93m'
+PURPLE = '\033[0;35m'
 RESET = '\033[0m'
 
 class AutoComplete:

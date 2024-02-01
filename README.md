@@ -10,6 +10,8 @@
 ```
 
 # Phantom-C2
+* Written for fun to learn sockets and more C.
+* Clear text, do not use outside a lab envrionment. 
 * Agents written in C
 * Server in Python3.8
 
@@ -17,7 +19,7 @@
 # To get the server up and listening:
 
 ```
-Listening on 0.0.0.0 (all interfaces) port 5000
+# Listening on 0.0.0.0 (all interfaces) port 5000
 python3.8 c2-server.py 
 ```
 

@@ -2,15 +2,8 @@ import socket
 import threading
 import readline
 from collections import OrderedDict
-from menu import Menu, GREEN, ORANGE, RESET     #import menu.py module
+from menu import Menu, GREEN, ORANGE, PURPLE, RESET     #import menu.py module
 from ascii_art import BANNER_ART                #import sick ascii 
-
-
-
-# ANSI colors
-GREEN = '\033[92m'
-ORANGE = '\033[93m'
-RESET = '\033[0m'
 
 class AutoComplete:
     def __init__(self, options):
@@ -100,20 +93,21 @@ def main_menu():
     while True:
         command, args = mainMenu.parse()
         if command == "agents":
-            print(f"\n{GREEN}Type \"interact <agent_id>\" to interact with an agent{RESET}\n")
-            print(f"\n{ORANGE}Active agents:{RESET}")
+            print(f"\n{GREEN}Type \"interact <agent_id>\" to interact with an agent{RESET}")
+            print(f"{PURPLE}Active agents:{RESET}")
 
             for client_id in clients.keys():
-                print(f"{GREEN}{client_id}{RESET}")
+                print(f"{PURPLE}{client_id}{RESET}")
             print()
         elif command.startswith("interact"):
             if len(args) < 1:
                 print(f"{ORANGE}Please specify an agent ID.{RESET}\n")
                 continue
-            elif len(args) == 2:
-                print(f"\nConnected to {agent_id}!\n")
+            elif len(args) == 1:
                 agent_id = args[0]
                 interact_with_agent(agent_id, mainMenu)
+                # print(f"\nConnected to {agent_id}!\n")
+
 
         elif command == "help":
             mainMenu.showHelp()
