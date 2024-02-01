@@ -2,7 +2,9 @@ import socket
 import threading
 import readline
 from collections import OrderedDict
-from menu import Menu, GREEN, ORANGE, RESET  #import menu.py module
+from menu import Menu, GREEN, ORANGE, RESET     #import menu.py module
+from ascii_art import BANNER_ART                #import sick ascii 
+
 
 
 # ANSI colors
@@ -108,8 +110,11 @@ def main_menu():
             if len(args) < 1:
                 print(f"{ORANGE}Please specify an agent ID.{RESET}\n")
                 continue
-            agent_id = args[0]
-            interact_with_agent(agent_id, mainMenu)
+            elif len(args) == 2:
+                print(f"\nConnected to {agent_id}!\n")
+                agent_id = args[0]
+                interact_with_agent(agent_id, mainMenu)
+
         elif command == "help":
             mainMenu.showHelp()
         elif command == "exit":
@@ -117,7 +122,8 @@ def main_menu():
         else:
             print(f"{ORANGE}Invalid command.{RESET}\n")
 
-if __name__ == '__main__':
+if __name__ == '__main__':        
+    print(f"\n\n\n{GREEN}{BANNER_ART}{RESET}\n")
     server_thread = threading.Thread(target=start_server)
     server_thread.start()
     main_menu()
